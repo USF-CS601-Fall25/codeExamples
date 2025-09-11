@@ -22,6 +22,8 @@ public class StudentTestWithComparator {
         System.out.println("After sorting the list by name: ");
         System.out.println(students);
 
+
+
         // TreeSet uses a comparator to sort elements
         Set<Student> set1 = new TreeSet<>(comparatorById);
         set1.add(st1);
@@ -36,7 +38,7 @@ public class StudentTestWithComparator {
         System.out.println(set1);
         // TreeSet would not even be able to find this element anymore since the "key" changed
         // Keys of the map/set should not change!
-
+        /*
         Set<Student> set2 = new TreeSet<>(comparatorByName);
         set2.add(st1);
         set2.add(st2);
@@ -48,5 +50,7 @@ public class StudentTestWithComparator {
         st2.setName("D");
         set2.add(st2);
         System.out.println(set2);
+
+        */
     }
 }

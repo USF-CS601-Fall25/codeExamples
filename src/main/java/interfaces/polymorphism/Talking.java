@@ -1,5 +1,8 @@
 package interfaces.polymorphism;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /** The main class for the Speak/GameCharacter example that
  * demonstrates polymorphism via interfaces.  */
 public class Talking {
@@ -7,12 +10,11 @@ public class Talking {
         Speaker speaker;
         speaker = new Philosopher();
         speaker.speak();
-        // ((Philosopher)speaker).pontificate();
-
         speaker = new Dog();
+        ((Philosopher)speaker).pontificate();
         speaker.speak();
 
-        /*
+       /*
         List<Speaker> speakers  = new ArrayList<>();
         speakers.add(new Dog());
         speakers.add(new Philosopher());
@@ -22,7 +24,9 @@ public class Talking {
         for (Speaker sp: speakers) {
             sp.speak();
         }
+
         */
+
 
 
 

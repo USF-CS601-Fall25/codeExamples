@@ -23,23 +23,24 @@ public class Student implements Comparable<Student> {
             return 0;
         }
         else
-            if (this.averageGPA < otherStudent.averageGPA)
-                return -1;
-            else
-                return 1;
+        if (this.averageGPA < otherStudent.averageGPA)
+            return -1;
+        else
+            return 1;
 
-       /* if (this.id < otherStudent.id)
+        /*if (this.id < otherStudent.id)
             return -1;
         else if (this.id == otherStudent.id){
             return 0;
         }
         else
             return 1;
-
         */
-        //return this.id - otherStudent.id;
 
-       //return name.compareTo(otherStudent.name);
+        //return this.id - otherStudent.id;
+        //return Integer.compare(this.id, otherStudent.id);
+
+        //return name.compareTo(otherStudent.name);
     }
 
     public void setId(int newId) {

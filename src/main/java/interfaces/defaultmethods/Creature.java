@@ -8,6 +8,12 @@ public class Creature implements Speak {
     }
 
     @Override
+    public void shout() {
+        Speak.super.shout();
+        System.out.println("Yell!");
+    }
+
+    @Override
     public String toString() {
         return "ok";
     }
