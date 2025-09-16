@@ -7,15 +7,19 @@ public class Subclass  extends Superclass {
     @Override
     public void func1() {
         System.out.println("func1, subclass version");
+        // staticFunc1(); // Uncomment to see what happens
     }
 
     /** Subclass cannot override the static method of the parent, but it
      * can provide it's own static method with the same name. It will not behave polymorphically.
      */
-    /*public static void staticFunc1() {
+    /*
+    public static void staticFunc1() {
         System.out.println("staticFunc1, subclass version");
     }
-    */
+
+     */
+
 }
 
 
