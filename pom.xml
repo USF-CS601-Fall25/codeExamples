@@ -44,6 +44,16 @@
             <version>5.8.0</version> <!-- Match or stay close to mockito-core version -->
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>dev.langchain4j</groupId>
+            <artifactId>langchain4j</artifactId>
+            <version>0.34.0</version>
+        </dependency>
+        <dependency>
+            <groupId>dev.langchain4j</groupId>
+            <artifactId>langchain4j-open-ai</artifactId>
+            <version>0.34.0</version>
+        </dependency>
     </dependencies>
     <properties>
         <maven.compiler.source>24</maven.compiler.source>
