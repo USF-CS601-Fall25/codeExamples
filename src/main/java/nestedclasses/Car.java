@@ -14,17 +14,7 @@ public class Car {
     class Engine {
         public void start() {
             System.out.println("The engine of " + model + " is starting...");
+            // Engine can access the private instance variable model
         }
-    }
-
-    public static void main(String[] args) {
-        // Create a Car object
-        Car myCar = new Car("Tesla Model S", 670);
-
-        // Create an Engine tied to *that* Car
-        Car.Engine engine = myCar.new Engine();
-
-        // Start the engine
-        engine.start();
     }
 }

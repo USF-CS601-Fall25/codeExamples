@@ -1,6 +1,6 @@
 package nestedclasses;
-/** The class that represents a Hash Map. Demonstrates the use of a static class.
- *  Based on Java's built-in HashMap class. */
+/** The class that represents a hash table. Demonstrates the use of a static class.
+ *  Similar to Java's built-in HashMap class, but simpler/not parameterized. */
 public class MyMap {
     private MyEntry[] hashtable;
     private int maxSize;
@@ -65,17 +65,6 @@ public class MyMap {
 
     public int hash(String key) {
         return key.hashCode() % maxSize;
-    }
-
-    public static void main(String[] args) {
-        //MyMap m = new MyMap(5);
-        //m.put("hello", 2);
-        //System.out.println(m.get("hello"));
-        MyEntry entry = new MyEntry("hello", 6);
-        MyEntry entry2 = new MyEntry("hola", 3);
-
-        System.out.println(entry.key);
-
     }
 
 }
