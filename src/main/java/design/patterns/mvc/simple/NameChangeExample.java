@@ -1,6 +1,6 @@
 package design.patterns.mvc.simple;
 
-public class Main {
+public class NameChangeExample {
     public static void main(String[] args) {
         StudentDataModel model = new StudentDataModel();
         Student st1 = new Student("Alice", 3.5, 0);
