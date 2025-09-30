@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Thank You</title>
+</head>
+<body>
+<h1>Application Submitted</h1>
+<p>Thank you, <span th:text="${myapp.getName()}"></span>!</p>
+<p>We’ve received your application for the role: <strong th:text="${myapp.getRole()}"></strong>.</p>
+<p>We’ll contact you at <span th:text="${myapp.getEmail()}"></span>.</p>
+
+</body>
+</html>
