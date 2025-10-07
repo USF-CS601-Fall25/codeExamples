@@ -1,4 +1,4 @@
-package multithreading;
+package multithreading.synchronizedkeyword;
 
 public class SynchronizedCounter {
     private int c = 0;

@@ -1,4 +1,4 @@
-package multithreading;
+package multithreading.synchronizedkeyword;
 
 public class NoSynchronization {
 	private volatile int x = 0;

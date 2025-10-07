@@ -1,4 +1,4 @@
-package multithreading;
+package multithreading.synchronizedkeyword;
 
 /**  Based on NoSynchronization example */
 public class WithSynchronization {

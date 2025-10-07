@@ -1,4 +1,4 @@
-package multithreading;
+package multithreading.synchronizedkeyword;
 
 /**
  * @author Prof. Engle 
