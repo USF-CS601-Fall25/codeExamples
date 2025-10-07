@@ -1,7 +1,6 @@
 package multithreading.virtual;
 
 import java.io.BufferedReader;
-import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.nio.file.*;
@@ -39,16 +38,18 @@ public class VirtualThreadFileIODemo {
             try {
                 Path temp = Files.createTempFile("temp_" + id + "_" + j, ".txt");
                 Files.writeString(temp, "Data for task " + id + ", file " + j);
-                BufferedReader br = new BufferedReader(new FileReader(temp.toFile()));
-                String data = br.readLine();
-                assert(data.contains(String.valueOf(id)));
+                try (BufferedReader br = new BufferedReader(new FileReader(temp.toFile()))) {
+                    String data = br.readLine();
+                    assert (data.contains(String.valueOf(id)));
 
-                if (data.length() == 0) System.err.println("Unexpected empty file!");
-                Files.delete(temp);
-                Thread.sleep(50);
-            } catch (IOException e) {
-                System.err.println("I/O error in task " + id + ": " + e.getMessage());
-            } catch (InterruptedException e) {
+                    if (data.length() == 0) System.err.println("Unexpected empty file!");
+                    Files.delete(temp);
+                    Thread.sleep(50);
+                } catch (IOException e) {
+                    System.err.println("I/O error in task " + id + ": " + e.getMessage());
+                }
+            }
+            catch (IOException | InterruptedException e) {
                 throw new RuntimeException(e);
             }
         }
