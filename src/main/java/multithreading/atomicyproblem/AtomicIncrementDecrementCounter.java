@@ -4,7 +4,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 // Count is guaranteed to be a 0.
 public class AtomicIncrementDecrementCounter {
-	static AtomicInteger count = new AtomicInteger(0); // atomic shared variable
+	private static AtomicInteger count = new AtomicInteger(0); // atomic shared variable
 
 	public static void main(String[] args) throws InterruptedException {
 		Runnable incrementTask = () -> {

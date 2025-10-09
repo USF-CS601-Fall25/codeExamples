@@ -6,7 +6,7 @@ package multithreading.atomicyproblem;
 // Actual result: unpredictable! Sometimes 0, sometimes positive, sometimes negative.
 // Because count++ and count-- are not atomic.  Should be treated as atomic.
 public class IncrementDecrementCounter {
-	static int count = 0;
+	private static int count = 0;
 
 	public static void main(String[] args) throws InterruptedException {
 		Runnable incrementTask = () -> {
