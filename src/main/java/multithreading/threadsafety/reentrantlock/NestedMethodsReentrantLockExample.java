@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 
-class NestedMethodsReentrantLock {
+class NestedMethodsReentrantLockExample {
     private final List<Integer> data = new ArrayList<>();
     private final ReentrantReadWriteLock lock = new ReentrantReadWriteLock();
 
@@ -44,5 +44,26 @@ class NestedMethodsReentrantLock {
         } finally {
             lock.writeLock().unlock();
         }
+    }
+
+    public static void main(String[] args) {
+        NestedMethodsReentrantLockExample ex = new NestedMethodsReentrantLockExample();
+        Thread t1 = new Thread(() -> {
+           ex.writeData(5);
+        });
+
+        Thread t2 = new Thread(() -> {
+            ex.writeData(10);
+        });
+        t1.start();
+        t2.start();
+        try {
+            t1.join();
+            t2.join();
+        }
+        catch(InterruptedException e) {
+            System.out.println(e);
+        }
+        System.out.println(ex.readData());
     }
 }
