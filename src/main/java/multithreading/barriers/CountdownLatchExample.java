@@ -19,7 +19,7 @@ public class CountdownLatchExample {
         }
 
         try {
-            latch.await(); // wait for the count to be 0
+            latch.await(); // main thread waits for the count to be 0
             System.out.println("All done!");
             poolManager.shutdownNow();
         }
