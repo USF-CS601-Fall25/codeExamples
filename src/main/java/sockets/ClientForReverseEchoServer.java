@@ -44,7 +44,7 @@ public class ClientForReverseEchoServer extends Thread {
 				if (input.equals(SimpleServer.EOT)) {
 					System.out.println("Client: Ending client.");
 					socket.close();
-				} else if (input.equals(SimpleServer.SHUTDOWN)) {
+				} else if (input.equals("EXIT")) {
 					System.out.println("Client: Shutting down server.");
 					socket.close();
 				}

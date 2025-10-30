@@ -43,7 +43,7 @@ import java.net.Socket;
 public class ReverseEchoServer {
 	public final static int PORT = 5534;
 	
-	public static void main(String[] args) throws IOException {
+	public static void main(String[] args)  {
 		Socket connectionSocket = null;
 		try (ServerSocket welcomingSocket = new ServerSocket(ReverseEchoServer.PORT)) {
 			System.out.println("Server started: waiting for connections on port " + ReverseEchoServer.PORT);
@@ -66,8 +66,13 @@ public class ReverseEchoServer {
 		finally {
 			// welcoming socket will be closed automatically since we are using try with resources
 			System.out.println("Bye!");
-			if (connectionSocket != null)
-				connectionSocket.close();
+			if (connectionSocket != null) {
+				try {
+					connectionSocket.close();
+				} catch (IOException e) {
+					System.out.println(e);
+				}
+			}
 		}
 	}
 }
